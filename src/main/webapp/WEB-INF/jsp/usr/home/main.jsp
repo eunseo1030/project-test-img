@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file="../common/head.jspf"%> <!-- 공통 헤더 포함 -->
-
+   
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,17 +11,15 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.13/fullpage.min.css">
 
 <style>
-    /* 첫 번째 섹션에서만 고정된 헤더 스타일 */
-    .fixed-header {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        background-color: white;
-        z-index: 1000;
-        text-align: center;
-        padding: 10px 0;
-        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    }
+   .fixed-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: transparent; /* 배경색을 투명하게 설정 */
+    z-index: 1000;
+    padding: 10px 0;
+    box-shadow: none; /* 그림자 제거 */
+}
 
     /* 섹션 스타일 */
     .section {
@@ -30,6 +27,7 @@
         font-size: 3em;
         font-family: Arial, sans-serif;
         height: 100vh; /* 섹션을 화면 크기만큼 설정 */
+        overflow: hidden; /* 스크롤바 제거 */
     }
 
     /* 첫 번째 섹션 스타일 (텍스트 왼쪽, 이미지 오른쪽) */
@@ -40,6 +38,7 @@
         padding: 50px;
         background-color: white; /* 배경은 하얀색 */
         height: 100vh;
+        box-sizing: border-box; /* 추가된 스크롤바 문제 방지 */
     }
 
     /* 첫 번째 섹션 텍스트 스타일 */
@@ -90,8 +89,8 @@
 </head>
 <body>
 
-<!-- 첫 번째 섹션에서 고정된 헤더 -->
-<div class="fixed-header">
+<!-- 고정된 헤더 -->
+<div class="fixed-header" id="fixed-header">
     <%@ include file="../common/head.jspf"%> <!-- 공통 헤더 포함 -->
 </div>
 
