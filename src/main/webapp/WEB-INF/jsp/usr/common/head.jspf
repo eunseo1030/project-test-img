@@ -6,6 +6,28 @@
 <head>
 <meta charset="UTF-8">
 <title>${pageTitle }</title>
+
+<!-- 폰트 설정 -->
+<style>
+    @font-face {
+        font-family: 'Ownglyph_kimkonghae';
+        src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408@1.0/Ownglyph_kimkonghae.woff2') format('woff2');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    /* 전체 페이지에 폰트를 적용 */
+    body {
+        font-family: 'Ownglyph_kimkonghae', sans-serif; /* Ownglyph_kimkonghae 폰트를 기본으로 설정 */
+    }
+
+    /* 특정 요소에 폰트를 적용하는 예시 */
+    .header-logo {
+        font-family: 'Ownglyph_kimkonghae', sans-serif; /* 헤더 로고에 폰트 적용 */
+    }
+</style>
+
+<!-- 기존 설정 유지 -->
 <link rel="stylesheet" href="/resource/common.css" />
 <script src="/resource/common.js" defer="defer"></script>
 <!-- 제이쿼리 -->
@@ -13,11 +35,9 @@
 
 <!-- 폰트어썸 -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-<!-- 폰트어썸 FREE 아이콘 리스트 : https://fontawesome.com/v5.15/icons?d=gallery&p=2&m=free -->
 
 <!-- 테일윈드 -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.1.4/tailwind.min.css">
-<!-- 테일윈드 치트시트 : https://nerdcave.com/tailwind-cheat-sheet -->
 
 <!-- daisyUI -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/daisyui/4.12.10/full.css" />
@@ -25,12 +45,10 @@
 </head>
 <body>
 	<header>
-		<div class="flex h-20 mx-auto items-center text-3xl">
-			<a href="/">LOGO</a>
+		<div class="flex h-20 mx-auto items-center text-3xl header-logo">
+			<a href="/">LOGO</a> <!-- 폰트를 여기에도 적용 -->
 			<div class="flex-grow"></div>
-			<ul class="flex space-x-6"> <!-- space-x-6: 각 항목 간의 간격을 추가 -->
-			    <li><a class="hover:underline" href="/">HOME</a></li>
-			    
+			<ul class="flex space-x-6">
 			    <!-- 로그인하지 않았을 때 LOGIN과 JOIN만 표시 -->
 			    <c:if test="${!rq.isLogined() }">
 				    <li><a class="hover:underline" href="../member/login">로그인</a></li>
